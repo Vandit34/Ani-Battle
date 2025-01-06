@@ -76,7 +76,6 @@ function App () {
             <>
               <div className='battleBg'>
               <BattleArena/>
-
               </div>
             </>
           )}

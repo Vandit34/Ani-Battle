@@ -1,20 +1,53 @@
 import React from 'react'
 import { characters } from './data/character.js'
+import { useState } from 'react'
 // import {battleScore} from "./utils/battle.js"
+import Card from './Card.jsx'
 
 const BattleArena = () => {
+  const [handleCharacter, sethandleCharacter] = useState(null)
 
-    // console.log(battleScore(A,B).healthA);
-    // console.log(battleScore(C,D).healthB);
+  const handeleMouseEnter = character => {
+    // console.log("Mouse entered on character: ", character);
+    sethandleCharacter(character)
+  }
 
-    
+  const handleMouseLeave = () => {
+    // console.log("Mouse left the character");
+    sethandleCharacter(null)
+  }
+
+  const [PlayerA, setPlayerA] = useState(null)
+  const [PlayerB, setPlayerB] = useState(null)
+
+  const selectingPlayers = character => {
+    if (PlayerA === null) {
+      console.log('PlayerA:', character)
+      setPlayerA(character)
+    } else if (PlayerB === null) {
+      console.log('PlayerB:', character)
+      setPlayerB(character)
+    } else {
+      console.log('Both players are selected')
+    }
+  }
+
   return (
     <div className='battle-arena-container 0 min-h-screen flex flex-col justify-between p-10'>
       {/* Battle Cards Section */}
       <div className='flex justify-between items-center mb-20'>
         {/* Player 1 Card */}
         <div className='player-card bg-white shadow-xl rounded-lg w-1/4 p-5 flex flex-col items-center transform hover:scale-105 transition-transform'>
-          <div className='character-image bg-gray-200 w-full h-48 rounded-lg mb-4'></div>
+          <div className='character-image bg-gray-200  rounded-lg mb-4'>
+            <img
+              className='w-[25rem] h-[25rem]'
+              src={
+                PlayerA === null
+                  ? '../src/assets/CharThinking.jpg'
+                  : PlayerA.image
+              }
+            />
+          </div>
           <h2 className='text-xl font-bold text-gray-800'>Player 1</h2>
         </div>
 
@@ -23,30 +56,60 @@ const BattleArena = () => {
 
         {/* Player 2 Card */}
         <div className='player-card bg-white shadow-xl rounded-lg w-1/4 p-5 flex flex-col items-center transform hover:scale-105 transition-transform'>
-          <div className='character-image bg-gray-200 w-full h-48 rounded-lg mb-4'></div>
+          <div className='character-image bg-gray-200  rounded-lg mb-4'>
+            <img
+              className='w-[25rem] h-[25rem]'
+              src={
+                PlayerB === null
+                  ? '../src/assets/CharThinking.jpg'
+                  : PlayerB.image
+              }
+            />
+          </div>
           <h2 className='text-xl font-bold text-gray-800'>Player 2</h2>
         </div>
       </div>
-      {/* Character Selection Section */}
-      <div className='character-selection bg-pink-600 bg-opacity-80 rounded-lg p-5 shadow-md flex overflow-x-auto gap-4'>
-        {characters.map((_, index) => (
-          <div
-            key={index}
-            className='character-box relative bg-gray-200 w-32 h-32 rounded-lg shadow-md hover:shadow-lg cursor-pointer transform hover:scale-110 transition-transform flex-shrink-0'
-          >
-            {/* /* Character Image */}
-            <div className='character-img w-full h-full rounded-lg bg-gray-400'>
-              <img
-                src={characters[index].image}
-                alt={`Character ${[index + 1]}`}
-                className='w-full h-full object-cover rounded-lg'
+
+      <>
+        <>
+          {handleCharacter && (
+            <div className='absolute z-20 left-[40%] top-[45%]'>
+              <Card
+                name={handleCharacter.name}
+                series={handleCharacter.series}
+                attack={handleCharacter.attack}
+                defense={handleCharacter.defense}
+                specialPower={handleCharacter.specialPower}
               />
             </div>
-            {/* Name on Hover */}
-            <div className='character-name absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white text-center text-sm py-1 opacity-0 hover:opacity-100 transition-opacity'>
-              {characters[index].name}
+          )}
+        </>
+      </>
+
+      {/* Character Selection Section */}
+
+      <div className=' character-selection bg-pink-600 bg-opacity-80 rounded-lg p-5 shadow-md flex overflow-x-auto gap-4'>
+        {characters.map((character, index) => (
+          <>
+            <div
+              key={index}
+              className='character-box relative bg-gray-200 w-32 h-32 rounded-lg shadow-md hover:shadow-lg cursor-pointer transform hover:scale-110 transition-transform flex-shrink-0'
+              onMouseEnter={() => handeleMouseEnter(character)}
+              onMouseLeave={handleMouseLeave}
+              onClick={() => {
+                selectingPlayers(character)
+              }}
+            >
+              {/* /* Character Image */}
+              <div className='character-img w-full h-full rounded-lg bg-gray-400'>
+                <img
+                  src={characters[index].image}
+                  alt={`Character ${[index + 1]}`}
+                  className='w-full h-full object-cover rounded-lg'
+                />
+              </div>
             </div>
-          </div>
+          </>
         ))}
       </div>
     </div>

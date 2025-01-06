@@ -60,7 +60,70 @@
     width: 100%;
   }
 
-  /* .moveMenuBar {
-    display: none;
-  } */
+  /* Stats Ui of the card */
+
+  .gaming-card {
+    width: 300px;
+    background: linear-gradient(135deg, #1f1f1f, #121212);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    font-family: "Orbitron", sans-serif; /* Gaming font for a futuristic vibe */
+    border: 2px solid #5ab2ff; /* Neon blue border */
+  }
+  
+  .gaming-card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .gaming-card-info {
+    text-align: center;
+    padding: 10px 15px;
+    background: #252525;
+    border-bottom: 2px solid #5ab2ff;
+  }
+  
+  .gaming-card-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5ab2ff;
+    margin: 0;
+  }
+  
+  .gaming-card-series {
+    font-size: 1rem;
+    font-style: italic;
+    color: #aaa;
+  }
+  
+  .gaming-card-stats {
+    padding: 15px;
+    background: #181818;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+  }
+  
+  .stat-title {
+    color: #5ab2ff;
+    font-weight: bold;
+  }
+  
+  .stat-value {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+
+  /* ------------------------- */
+
 }
