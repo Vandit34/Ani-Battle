@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GiCrossedBones, GiBroadsword } from 'react-icons/gi'
-import BattleArena from "./Battle.jsx"
+import BattleArena from './Battle.jsx'
 function App () {
-  const [currentPage, setCurrentPage] = useState('battle')
+  const [currentPage, setCurrentPage] = useState('home')
   const [isSideBarOpen, setIsSideBarOpen] = useState(false)
   // console.log(isSideBarOpen);
 
@@ -30,17 +30,17 @@ function App () {
               <div className='homeBg'>
                 {/* Hero Section */}
                 <div className='text-center'>
-                  <h1 className='text-6xl font-extrabold mb-6 pt-10 tracking-wider text-[#004AAD] drop-shadow-md'>
+                  <h1 className='text-6xl font-extrabold mb-6 pt-[4rem] tracking-wider text-[#004AAD] drop-shadow-md'>
                     Ani-Battle
                   </h1>
-                  <p className='text-lg text-[#2C8ED6] mb-10 font-medium'>
+                  <p className='text-[2rem] text-[#2C8ED6] mb-10 font-[600]'>
                     Step into the ultimate arena where your favorite anime
                     characters clash in epic battles.
                   </p>
                 </div>
 
                 {/* Features Section */}
-                <div className='mt-16 flex flex-col md:flex-row justify-center gap-8'>
+                <div className='mt-[15rem] flex flex-col md:flex-row justify-center gap-8'>
                   <div className='bg-white bg-opacity-90 p-6 rounded-xl shadow-xl w-80 text-center hover:scale-105 transition-transform duration-300'>
                     <h2 className='text-2xl font-semibold text-[#004AAD] mb-4'>
                       Choose Your Fighter
@@ -75,7 +75,7 @@ function App () {
           {currentPage === 'battle' && (
             <>
               <div className='battleBg'>
-              <BattleArena/>
+                <BattleArena />
               </div>
             </>
           )}
@@ -96,8 +96,18 @@ function App () {
               isSideBarOpen ? 'opacity-100' : 'opacity-0 '
             }`}
           >
-            <li className='pt-4 text-[1.1rem] cursor-pointer'>Home</li>
-            <li className='pt-4 text-[1.1rem] cursor-pointer'>Battle</li>
+            <li
+              className='pt-4 text-[1.1rem] cursor-pointer'
+              onClick={() => changePage('home')}
+            >
+              Home
+            </li>
+            <li
+              className='pt-4 text-[1.1rem] cursor-pointer'
+              onClick={() => changePage('battle')}
+            >
+              Battle
+            </li>
           </ul>
         </div>
       </div>

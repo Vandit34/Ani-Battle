@@ -125,5 +125,40 @@
   
 
   /* ------------------------- */
+  .health-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .health-bar {
+    display: flex;
+    width: 300px; /* Adjust as needed */
+    height: 20px; /* Height of the bar */
+    background-color: black; /* Outer bar background */
+    border: 2px solid #333; /* Border for the retro look */
+    padding: 2px;
+    gap: 2px; /* Space between segments */
+  }
+  
+  .health-segment {
+    flex: 1; /* Segments equally spaced */
+    background-color: green; /* Default color when filled */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition for updates */
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* ------------------------- */
+
+
+
+
+
 
 }
