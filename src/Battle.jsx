@@ -79,9 +79,7 @@ const BattleArena = () => {
             <img
               className='w-[20rem] h-[20rem]'
               src={
-                PlayerA === null
-                  ? '../src/assets/CharThinking.jpg'
-                  : PlayerA.image
+                PlayerA === null ? '/assets/CharThinking.jpg' : PlayerA.image
               }
             />
           </div>
@@ -166,9 +164,7 @@ const BattleArena = () => {
             <img
               className='w-[20rem] h-[20rem]'
               src={
-                PlayerB === null
-                  ? '../src/assets/CharThinking.jpg'
-                  : PlayerB.image
+                PlayerB === null ? '/assets/CharThinking.jpg' : PlayerB.image
               }
             />
           </div>

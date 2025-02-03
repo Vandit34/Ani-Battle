@@ -7,7 +7,7 @@ export const characters = [
     defense: 78,
     specialPower: 92,
     health: 110,
-    image: '../src/assets/Char1.jpg'
+    image: '/assets/Char1.jpg'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const characters = [
     defense: 82,
     specialPower: 90,
     health: 105,
-    image: '../src/assets/Char2Fight.jpg'
+    image: '/assets/Char2Fight.jpg'
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const characters = [
     defense: 80,
     specialPower: 95,
     health: 102,
-    image: '../src/assets/Char3Fight.jpg'
+    image: '/assets/Char3Fight.jpg'
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const characters = [
     defense: 84,
     specialPower: 93,
     health: 108,
-    image: '../src/assets/Char4.jpg'
+    image: '/assets/Char4.jpg'
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const characters = [
     defense: 88,
     specialPower: 100,
     health: 115,
-    image: '../src/assets/Char5.jpg'
+    image: '/assets/Char5.jpg'
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ export const characters = [
     defense: 80,
     specialPower: 94,
     health: 107,
-    image: '../src/assets/Char6.jpg'
+    image: '/assets/Char6.jpg'
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ export const characters = [
     defense: 85,
     specialPower: 91,
     health: 112,
-    image: '../src/assets/Char7.jpg'
+    image: '/assets/Char7.jpg'
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ export const characters = [
     defense: 87,
     specialPower: 95,
     health: 118,
-    image: '../src/assets/Char8.jpg'
+    image: '/assets/Char8.jpg'
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ export const characters = [
     defense: 90,
     specialPower: 89,
     health: 115,
-    image: '../src/assets/Char9.jpg'
+    image: '/assets/Char9.jpg'
   },
   {
     id: 10,
@@ -97,6 +97,6 @@ export const characters = [
     defense: 83,
     specialPower: 92,
     health: 106,
-    image: '../src/assets/Char10.jpg'
+    image: '/assets/Char10.jpg'
   }
 ];

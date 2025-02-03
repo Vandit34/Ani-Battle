@@ -35,7 +35,7 @@ const battleScore = async (charA, charB, updateLogsCallback, dataA,dataB) => {
       winner: healthA > healthB ? charA.name : charB.name
     }
 
-    // logs.push(roundData)
+    logs.push(roundData)
 
     // return roundData
     updateLogsCallback(roundData) // Update the logs after each round
@@ -50,8 +50,8 @@ const battleScore = async (charA, charB, updateLogsCallback, dataA,dataB) => {
   // if (i === 2) {
   const winner = healthA > healthB ? charA.name : charB.name
   console.log(winner)
-  // return { winner, logs } 
-  return { winner }
+  return { winner, logs } 
+  // return { winner }
   // }
 }
 
