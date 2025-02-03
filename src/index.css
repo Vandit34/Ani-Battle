@@ -20,7 +20,7 @@
         rgba(135, 206, 235, 0.5),
         rgba(135, 206, 235, 0.5)
       ),
-      url("./assets/home.jpg") no-repeat;
+      url("assets/home.jpg") no-repeat;
     background-size: cover;
     content: "";
     position: absolute;
@@ -49,7 +49,7 @@
   }
   .battleBg::before {
     position: absolute;
-    background: url("./assets/battleBg.jpg") center no-repeat;
+    background: url("assets/battleBg.jpg") center no-repeat;
     background-size: cover;
     content: "";
     z-index: -1;
