@@ -49,7 +49,7 @@
   }
   .battleBg::before {
     position: absolute;
-    background: url("/public/assets/home.jpg") center no-repeat;
+    background: url("/public/assets/battleBg.jpg") center no-repeat;
     background-size: cover;
     content: "";
     z-index: -1;
